@@ -1,0 +1,351 @@
+:root {
+    /* Colors */
+    --blue: #0346d4;
+    --blue-transparent: #084bddcc;
+    --blue-light: #a1a1fdd9;
+    --blue-dark: #084bdd1a;
+    --white: #FFFFFF;
+    --black: #000000;
+    --yellow: #FFFF00;
+    --dark-grey-1: #333333;
+    --dark-grey-2: #666666;
+    --light-grey-1: #999999;
+    --light-grey-2: #DDDDDD;
+    --light-grey-3: #eeeeee6b;
+
+    /* Shadow */
+    --shadow: 0 0 1px 2px #00000066;
+    --shadow-box: 0 0 7px 3px #091dd649;
+
+    /* Fonts */
+    --default-font-size: 62.5%;
+    --default-font: "Helvetica Neue", Verdana, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--dark-grey-1);
+    color: #ffffff;
+}
+
+
+html {
+    font-size: var(--default-font-size);
+    font-family: var(--default-font);
+}
+
+
+body {
+    height: 100vh;
+    background: url('https://s3.amazonaws.com/bucketeer-4de657b8-6d51-4a8d-9fee-1b876d2bfe98/magazine/wp-content/uploads/2019/06/13120354/iStock-5431830181.jpg');
+    background-size: cover;
+    padding: 7rem;
+    position: relative;
+}
+
+.margin-bottom-small {
+    margin-bottom: 1.5rem !important;
+}
+
+.margin-bottom-medium {
+    margin-bottom: 2.5rem !important;
+}
+
+.margin-bottom-large {
+    margin-bottom: 3.5rem !important;
+}
+
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+    text-decoration: none;
+    color: var(--white);
+    display: inline-block;
+    padding: 1rem 2rem;
+}
+
+.container {
+    display: flex;
+    width: 85%;
+    height: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-box);
+}
+
+.info {
+    text-align: center;
+    background: var(--blue-transparent);
+    padding: 2rem;
+    height: 100%;
+    color: var(--white);
+    font-size: 1.8rem;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.info-main {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-logo {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.info-name {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.info-tagline {
+    color: var(--light-grey-2);
+}
+
+.info-website:hover {
+    color: var(--yellow);
+    box-shadow: var(--shadow);
+    border-top: none;
+    border-radius: .7rem;
+    transition: all .2s;
+
+}
+
+.info-website:active {
+    transform: translateY(2px);
+}
+
+.info-website i {
+    margin-right: .5rem;
+    font-size: 1.4rem;
+}
+
+.login {
+    padding: 0 2rem;
+    height: 100%;
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex: 1;
+}
+
+.form {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    padding: 3rem;
+    flex: 1;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    color: var(--dark-grey-1);
+}
+
+.form-group:not(:last-child) {
+    margin-bottom: 2.5rem;
+}
+
+
+.form-label {
+    font-size: 1.2rem;
+    margin-left: 2.2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .2s;
+    font-weight: 600;
+    color: var(--light-grey-1);
+}
+
+.form-input:placeholder-shown+.form-label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+}
+
+.form-input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 3px;
+    background-color: var(--light-grey-3);
+    border: none;
+    border-bottom: solid 3px transparent;
+    width: 99%;
+    display: block;
+    box-shadow: none;
+    outline: none;
+    transition: all .2s;
+}
+
+.form-input:focus {
+    border-bottom: 3px solid var(--blue);
+}
+
+.form-input:focus:invalid {
+    border-bottom: 3px solid red;
+}
+
+.form-input::placeholder {
+    color: var(--light-grey-1);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-control>* {
+    display: inline-block;
+    width: 49%;
+}
+
+.form-forgot-pass {
+    color: var(--dark-grey-2) !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.form-forgot-pass:hover {
+    color: var(--blue) !important;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .2s;
+}
+
+.button-signin {
+    height: 4.5rem;
+    background-color: var(--blue);
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform .2s;
+}
+
+.button-signin:hover {
+    background-color: #0000ad;
+}
+
+.button-signin:active,
+.form-forgot-pass:active {
+    transform: translateY(2px);
+}
+
+.button-signup {
+    display: block;
+
+    height: 5rem;
+    line-height: 5rem;
+    background: var(--blue-dark);
+    border: solid 1px var(--blue-light);
+    text-align: center;
+    margin: auto;
+    font-size: 1.4rem;
+    color: var(--blue);
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.button-signup:hover {
+    border: solid 1px var(--blue-light);
+    box-shadow: var(--shadow);
+}
+
+.button-signup>span {
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.button-signup:active {
+    transform: translateY(2px);
+    border: solid 1px var(--blue-light);
+    transition: all .2s;
+}
+
+/* 1200px */
+@media only screen and (max-width: 75em) {
+    html {
+        font-size: 52.5%;
+        transition: all 1s;
+    }
+}
+
+/* 600px */
+@media only screen and (max-width: 37.5em) {
+    .login {
+        flex: 3 !important;
+        transition: all 1s;
+    }
+
+    .container {
+        width: 95%;
+        transition: all 1s;
+    }
+
+    i {
+        display: none !important;
+        transition: all 1s;
+    }
+}
+
+/* 440px */
+@media only screen and (max-width: 27.5em) {
+    .info {
+        display: none;
+        transition: all 1s;
+    }
+
+    .form::before {
+        content: "";
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        margin: 1rem auto;
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSbA1RwSgbmHnbFqsRgBuR6elT_gX3zUlYJBw&usqp=CAU');
+        background-size: cover;
+        transition: all 1s;
+    }
+
+    .form-title {
+        margin-top: 3.5rem;
+        transition: all 1s;
+    }
+}
+
+/* 280px */
+@media screen and (max-width: 17.5em) {
+    html {
+        font-size: 37.5%;
+        transition: all 1s;
+    }
+}
